@@ -1,0 +1,15 @@
+<div class="containerModal">
+    <div class="modal">
+        <h2 class="tittle">Agregar Alumno</h2>
+        <form [formGroup]="registroAlumno" class="formRegister">
+            <input type="text" class="inputData" placeholder="Código del alumno" formControlName = "codigo" minlength="3" #addStudent>
+            <input type="text" class="inputData" placeholder="Nombres" formControlName = "nombres" #addStudent>
+            <input type="text" class="inputData" placeholder="Apellido Paterno" formControlName="apellidoPaterno" #addStudent>
+            <input type="text" class="inputData" placeholder="Apellido Materno" formControlName="apellidoMaterno" #addStudent>
+            <input type="text" class="inputData" placeholder="DNI" formControlName="dni" maxlength="8" #addStudent>
+            <input type="text" class="inputData" placeholder="Teléfono" formControlName="celular" maxlength="8" #addStudent>
+            <input type="submit" class="inputSubmitData" value="GUARDAR" routerLink="/" (click) = "registrarAlumno(addStudent.value)" >
+        </form>
+    </div>
+</div>
+

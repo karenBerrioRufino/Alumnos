@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { UserServiceService } from '../service/user-service.service';
-import { Data } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Data } from './table/data';
 
 @Component({
   selector: 'app-administrador',
@@ -11,43 +10,30 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class AdministradorComponent implements OnInit {
 
   data: Data[] = [];
-  showStudents: boolean = true;
-  form: FormGroup;
+  allData: any = [];
+  //showStudents: boolean = true;
+  
+  // @Input('student') alumno!: Data;
+  constructor(private userService: UserServiceService) { }
 
-  constructor(private fb: FormBuilder, private userService: UserServiceService) { 
-    this.form = this.fb.group({
-      codigo: ['', [Validators.required, Validators.minLength(3)]],
-      nombres: ['', Validators.required],
-      apellidoPaterno: ['', Validators.required],
-      apellidoMaterno: ['', Validators.required],
-      dni: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(8), Validators.pattern('[0-9]*')]],
-      celular: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(8), Validators.pattern('[0-9]*')]]
-    })
-  }
+  ngOnInit(): void { 
+   // this.data = this.userService.getStudents();
+   }
 
-  ngOnInit(): void {  }
-
-  registrarAlumno(){
-    console.log(this.form);
-    const ALUMNOS: Data = {
-      codigo: this.form.value.codigo,
-      nombres: this.form.value.nombres,
-      apellidoPaterno: this.form.value.apellidoPaterno,
-      apellidoMaterno: this.form.value.apellidoMaterno,
-      dni: this.form.value.dni,
-      celular: this.form.value.celular,
-    }
-    console.log(ALUMNOS, 'imprime la tabla')
-  }
-
+  /*studentAdded(student: Data | any){
+    this.userService.setStudents(student);
+  }*/ 
   loadList(){
-    console.log('load');
+    /* console.log('load');
     this.data = JSON.parse(this.userService.getStudents() || '{}');
     if (this.data !== null) {
       this.showStudents == true;
     }
     else {
       this.showStudents == false;
-    }
+    }*/
+    this.data = JSON.parse(localStorage.getItem('registro') || '{}');
   }
+  
 }
+

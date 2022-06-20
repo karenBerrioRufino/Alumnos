@@ -5,3 +5,82 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
   }
+.administratorContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.tittle{
+  padding: 15px 0;
+  font-size: 35px;
+  font-weight: 25px;
+  background-color: #d3a6b6;
+  width: 1000px;
+  margin: 20px 0 10px 0;
+  text-align: center;
+  border-radius: 15px;
+  color: white;
+}
+.agregar{
+  border-radius: 8px;
+  width: 500px;
+  height: 35px;
+  margin: 6px;
+  padding: 10px;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: #d4BD94;
+  font-size: 18px;
+  font-weight: bold;
+  border: 0 !important;
+  cursor: pointer;
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
+}
+.agregar:hover{
+  border-color: #d3a6b6;
+}
+.fa-circle-plus{
+  padding-left: 10px;
+}
+.listarAlumnos{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+table{
+  align-self: start;
+  border-collapse: collapse;
+  border: 1px solid lightgray;
+  font-family: 'Mulish', sans-serif;
+  font-size:11px;
+  width: 50%;
+  margin: 20px;
+}
+thead{
+  border:1px solid lightgray;
+  font-weight: 700;
+  background-color: #f4e7d5;
+}
+th{
+  padding: 1rem;
+  color: black;
+  font-size: 15px;
+  font-weight: bolder;
+}
+td {
+  padding: 0.4rem;
+  text-align: center;
+  border-bottom: 1px solid lightgray;
+}
+tr:hover {
+  background-color: #eee;
+}
+td i{
+  font-size: 18px;
+  padding: 5px;
+  cursor: pointer;
+  color: #d3a6b6;
+}

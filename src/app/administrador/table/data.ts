@@ -1,4 +1,4 @@
-export class Data {
+export interface Data {
   /* id!: number;
   nombres!: string;
   apellidoPaterno!: string;
@@ -6,14 +6,13 @@ export class Data {
   dni!: number;
   celular!: number;*/
   
-  constructor(
-    public id: number,
-    public nombres: string,
-    public apellidoPaterno: string,
-    public apellidoMaterno: string,
-    public dni: number,
-    public celular: number,
-  ){ 
+     id: number,
+     nombres: string,
+     apellidoPaterno: string,
+     apellidoMaterno: string,
+     dni: number,
+     celular: number,
+
     /*this.id = id;
     this.nombres = nombres;
     this.apellidoPaterno = apellidoPaterno;
@@ -21,4 +20,3 @@ export class Data {
     this.dni = dni;
     this.celular = celular;*/
   }
-}

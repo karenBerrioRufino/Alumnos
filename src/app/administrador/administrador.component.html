@@ -1,10 +1,10 @@
-<div class="administrator">
-    <h1>Registro de Alumnos</h1>
-<button class="agregar">
-    <h5>Agregar</h5>
-    <i class="fa-solid fa-circle-plus"></i>
-</button>
-    <div class="listarAlumnos" [formGroup]="form" *ngIf="showStudents">
+<div class="administratorContainer">
+    <h1 class="tittle">Registro de Alumnos</h1>
+    <button class="agregar" routerLink="/registro">
+        <h5>Agregar un nuevo alumno</h5>
+        <i class="fa-solid fa-circle-plus"></i>
+    </button>
+    <div class="listarAlumnos">
         <table>
             <thead>
                 <th>Código</th>
@@ -13,15 +13,17 @@
                 <th>Apellido Materno</th>
                 <th>DNI</th>
                 <th>Celular</th>
+                <th>Opciones</th>
             </thead>
             <tbody>
-                <tr *ngFor = "let alumno of data">
-                    <td>[alumno.id]</td>
-                    <td>[alumno.nombres]</td>
-                    <td>[alumno.apellidoPaterno]</td>
-                    <td>[alumno.apellidoMaterno]</td>
-                    <td>[alumno.dni]</td>
-                    <td>[alumno.celular]</td>
+                <tr *ngFor="let alumno of data">
+                    <td>{{alumno.id}}</td>
+                    <td>{{alumno.nombres}}</td>
+                    <td>{{alumno.apellidoPaterno}}</td>
+                    <td>{{alumno.apellidoMaterno}}</td>
+                    <td>{{alumno.dni}}</td>
+                    <td>{{alumno.celular}}
+                    </td>
                     <td class="btnOpciones">
                         <i class="fa-solid fa-pen-to-square"></i>
                         <i class="fa-solid fa-trash-can"></i>
@@ -29,17 +31,5 @@
                 </tr>
             </tbody>
         </table>
-    </div>
-    <div class="modal">
-        <h2>Agregar Alumno</h2>
-        <form [formGroup] = "form" (ngSubmit)="registrarAlumno()">
-            <input type="text" class="inputData" placeholder="Código del alumno" formControlName = "codigo" minlength="3">
-            <input type="text" class="inputData" placeholder="Nombres" formControlName = "nombres">
-            <input type="text" class="inputData" placeholder="Apellido Paterno" formControlName="apellidoPaterno">
-            <input type="text" class="inputData" placeholder="Apellido Materno" formControlName="apellidoMaterno">
-            <input type="text" class="inputData" placeholder="DNI" formControlName="dni" maxlength="8">
-            <input type="text" class="inputData" placeholder="Teléfono" formControlName="celular" maxlength="8">
-            <input type="submit" class="inputData" value="GUARDAR" >
-        </form>
     </div>
 </div>

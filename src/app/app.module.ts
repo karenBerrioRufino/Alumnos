@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AdministradorComponent } from './administrador/administrador.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserServiceService } from './service/user-service.service';
+import { RegistroComponent } from './registro/registro.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    AdministradorComponent
+    AdministradorComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,
